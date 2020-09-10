@@ -6,3 +6,4 @@ MarkupSafe==1.1.1
 Werkzeug==0.15.5
 numpy>=1.9.2
 Flask_cors==3.0.8
+pickle5==0.0.11
