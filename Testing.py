@@ -11,3 +11,4 @@ input = [[49.223744,14,22,71.285324,0.272118,78.04,2,31335.47682,3,0.424352]]
 pred = final_model.predict(input)
 
 print(pred)
+

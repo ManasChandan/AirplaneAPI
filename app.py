@@ -6,10 +6,13 @@ app = Flask(__name__)
 CORS(app)
 
 def prediction(features):
+    Pkl_Filename = 'Pickle_RL_Model.pkl'
+    with open(Pkl_Filename, 'rb') as file:
+        final_model = pickle.load(file)
     pred = final_model.predict(features)
     return pred[0]
 
-@app.route('/predict' , methods =['GET','POST'])
+@app.route('/predict', methods =['GET','POST'])
 def posting():
     jsonRequest = request.json
     print(jsonRequest)
@@ -29,9 +32,6 @@ def posting():
 
 
 if __name__ == '__main__':
-    Pkl_Filename = 'Pickle_RL_Model.pkl'
-    with open(Pkl_Filename, 'rb') as file:
-        final_model = pickle.load(file)
     app.run(debug=True)
 
 
